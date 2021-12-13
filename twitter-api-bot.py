@@ -1,11 +1,18 @@
 ## Twiter Bot
 
+## Lindsey Norberg, Chloe Dearman, and Julia Schopper
+## DS 3002 Final Project
+
+
+# Importing all the ncessary packages
 import tweepy
 import logging
 import time
 from random import randint
 import os
 
+
+# Creating an api object using Twitter credentials
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
 
@@ -13,12 +20,6 @@ auth = tweepy.OAuthHandler("GmMOXHJWAoFGpNQEquvGq6GDL",
                            "DMuGIVLTdBnQ7BPp39INL2DSCaQv7jnzvxCWIoDn44fZE2rRHs")
 auth.set_access_token("1445456363149090817-Cdz2z2a2j5Pc0sbOjX7wZPr08AMyc4", 
                       "t5h1HFWnCJn2rVtCmvW0se5CR9RgJUvsolt1qkj8cTsK8")
-
-try:
-    api.verify_credentials()
-    print("Your credentials have successfully been authenticated.")
-except: 
-    print("There was a problem getting verifying your credentials. Please try again.")
 
 # Creating the api object; this will be a global variable used in our bot
 api = tweepy.API(auth)
