@@ -45,6 +45,8 @@ def check_mentions(api, keywords, since_id):
         new_since_id = max(tweet.id, new_since_id)
         if tweet.in_reply_to_status_id is not None:
             continue
+            
+        # Here we will handle help and info that way it will always handle this and doesn't need to be included in the key words
         if "help" in tweet.text.lower():
             logger.info("Answering to " + tweet.user.name)
             check_user(tweet)
@@ -71,6 +73,7 @@ def check_mentions(api, keywords, since_id):
                 auto_populate_reply_metadata=True)
     return new_since_id
 
+  # Main function to run the bot
 def main():
     global api
     since_id = 1
